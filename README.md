@@ -8,3 +8,7 @@ https://github.com/ddurAdvisor
 
 ##讲义与课程作业数据下载地址
 链接：http://pan.baidu.com/s/1c5O9K6 密码：d0hk
+
+##开发环境下载链接：
+processing 3.2.1
+链接：http://pan.baidu.com/s/1hsCxY7a 密码：5pub
