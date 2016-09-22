@@ -12,3 +12,6 @@ https://github.com/ddurAdvisor
 ##开发环境下载链接：
 processing 3.2.1
 链接：http://pan.baidu.com/s/1hsCxY7a 密码：5pub
+
+##专用字体下载：
+链接：http://pan.baidu.com/s/1hsCxY7a 密码：5pub
