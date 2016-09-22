@@ -3,6 +3,7 @@
 
 ##关于ddur
 ddur: Data Driven User Research
+https://github.com/ddurAdvisor
 是数据数据驱动的的用户研究专题。
 
 ##讲义与课程作业数据下载地址
