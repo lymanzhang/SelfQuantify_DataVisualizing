@@ -1,0 +1,77 @@
+/*
+//用于根据串口输出的数据生成表格，便于后续的可视化工作
+ //2015-04-21
+ //Zhangliqun
+ //zhanglliqun@gmail.com
+ 
+ */
+
+Table intyDataTable;
+
+void setup() {
+  size(1280, 720);
+}
+
+void draw() {
+  rawDataProcess();
+  //makeTable();
+  //drawBars();
+  noLoop();
+}
+
+void rawDataProcess() {
+  String lines[] = loadStrings("intyData.txt");
+  println("there are " + lines.length + " lines");
+
+  intyDataTable = new Table();//declare a table object
+
+  for (int m = 0; m < 10; m ++) {
+    intyDataTable.addColumn("column"+m);//define table colume ID
+  }
+
+  for (int i = 0; i < lines.length; i++) {
+    //println(lines[i]);
+    String s = lines[i];
+    String[] HexNumsRaw = trim(split(s, "0x"));
+
+    //for (int j = 0; j < HexNumsRaw.length; j ++) {
+    //println(HexNumsRaw[j]);
+    //}
+
+    TableRow newRow = intyDataTable.addRow();//declare row
+
+      for (int n = 0; n < lines.length; n ++) {
+      newRow = intyDataTable.addRow();//add new row
+
+        for (int k = 1; k < HexNumsRaw.length/2; k ++) {
+        String HexNums = HexNumsRaw[k*2-1]+HexNumsRaw[k*2];
+        //println(HexNums+" ");
+        newRow.setString("column"+i, HexNums);//refer each cell to a value
+      }
+    }
+    saveTable(intyDataTable, "data/sample4.csv");//generate csv table file
+  }
+}
+
+void makeTable() {
+  intyDataTable = new Table();//declare a table object
+
+  for (int i = 0; i < 10; i ++) {
+    intyDataTable.addColumn("column"+i);//define table colume ID
+  }
+
+  TableRow newRow = intyDataTable.addRow();//declare row
+
+    for (int j = 0; j < 50; j ++) {
+    newRow = intyDataTable.addRow();//add new row
+    for (int i = 0; i < 10; i ++) {
+      newRow.setInt("column"+i, i+j);//refer each cell to a value
+    }
+  }
+
+  saveTable(intyDataTable, "data/sample4.csv");//generate csv table file
+}
+
+void drawBars() {
+}
+
